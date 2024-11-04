@@ -29,9 +29,9 @@ import java.util.zip.ZipOutputStream;
 //         .............................................
 //                  Pikachu            Obfuscation Tool
 //                           Authors
-//                  Rom - Head Developer of This Project
-//                  Hypinohaizin - Head Developer of OvaqReborn
-//                  Naa_Naa - Developer of OvaqReborn
+//                  Rom - Head Developer of Pikachu Obfuscation Tool Project
+//                  Hypinohaizin - Head Developer of OvaqReborn Project
+//                  Naa_Naa - Developer of OvaqReborn Project
 //
 //                  外部への無断譲渡を禁止します。
 //                  Projectの権限は2P2FJP Development Teamが所有しています。
@@ -57,7 +57,7 @@ public class Main {
     public static boolean useStringObf;
     public static boolean useStringObfT;
     public static boolean useNumberObf;
-    public static boolean useWaterMark;
+    public static boolean useRealjoke;
     public static boolean obfLocalVar;
     public static boolean delLocalVar;
     public static boolean fixVersion;
@@ -93,7 +93,7 @@ public class Main {
         System.out.println("      -useStringObf         |* すべての文字列を混淆");
         System.out.println("      -useStringObfT        |* 文字列混淆の基礎上で再混淆");
         System.out.println("      -useNumberObf         |* すべての整数を混淆");
-        System.out.println("      -useWaterMark         |  プログラムロード時にピカチュウ文字を表示");
+        System.out.println("      -useRealJoke          |  パッケージをランダム化");
         System.out.println("      -bigBrainNumberObf    |  芸術的な数字混淆 (注意: Minecraft Modと混淆する場合、これを使用しないでください)");
         System.out.println("      -applymap <File>      |  mapファイルをこの混淆器のルートディレクトリのmapフォルダに置き、<File>はxxx.txtです");
         System.out.println("      -obfLocalVar          |  -applymapで設定したmap内容を使用してメソッド内のローカル変数を混淆");
@@ -279,8 +279,8 @@ public class Main {
                                     classToFolder = true;
                                     break block19;
                                 }
-                                if (!arg.equals("-useWaterMark")) break block39;
-                                useWaterMark = true;
+                                if (!arg.equals("-useRealJoke")) break block39;
+                                useRealjoke = true;
                                 break block19;
                             }
                             if (!arg.equals("-bigBrainNumberObf")) break block40;
@@ -559,6 +559,25 @@ public class Main {
                             cw = oldcw;
                         }
                     }
+                    if (useRealjoke) {
+                        try {
+                            oldcr = cr;
+                            oldcw = cw;
+                            cr = new ClassReader(cw.toByteArray());
+                            cw = new ClassWriter1(cr, 3);
+                            cr.accept(new RealJokeTransformer(cr, cw, int1), 0);
+                            Main.verify(new MyCL(), cw.toByteArray());
+                        } catch (Exclude | NotInclude e) {
+                            cr = oldcr;
+                            cw = oldcw;
+                            System.out.println(" - Skip: " + e.getClass().getSimpleName());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            errors.add("[!] RealJokeTransformer ノウァイ: " + cr.getClassName() + " : " + e);
+                            cr = oldcr;
+                            cw = oldcw;
+                        }
+                    }
                     if (useSuperJunkCode) {
                         try {
                             oldcr = cr;
@@ -818,7 +837,7 @@ public class Main {
         useStringObf = false;
         useStringObfT = false;
         useNumberObf = false;
-        useWaterMark = false;
+        useRealjoke = false;
         obfLocalVar = false;
         delLocalVar = false;
         fixVersion = false;
