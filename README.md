@@ -18,6 +18,9 @@
 
 ちくわ - 紙男子
 
+### やることリスト
+- Guiを追加
+
 ### Build方法
 - JDKをセットアップ(17)
 - Gradle > shadow > shadowJarを選択
