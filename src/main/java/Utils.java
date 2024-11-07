@@ -1,4 +1,5 @@
 import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.tree.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -9,6 +10,8 @@ import java.nio.charset.CharacterCodingException;
 import java.nio.charset.CodingErrorAction;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
+
+import static org.objectweb.asm.Opcodes.*;
 
 public class Utils {
     public static Random r = new Random();
@@ -36,6 +39,18 @@ public class Utils {
             }
         }
         return s;
+    }
+
+    public static String reverse(int target) {
+        StringBuilder sb = new StringBuilder();
+
+        while (target != 0) {
+            int rest = target % 31;
+            sb.insert(0, (char) rest);
+            target /= 31;
+        }
+
+        return sb.toString();
     }
 
     public static String spawnRandomChar() {
