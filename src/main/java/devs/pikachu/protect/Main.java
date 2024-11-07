@@ -32,8 +32,8 @@ import java.util.zip.ZipOutputStream;
 //         .............................................
 //                  Pikachu            Obfuscation Tool
 //                           Authors
-//                  Rom - Head Developer of Pikachu Obfuscation Tool Project
-//                  Hypinohaizin - Head Developer of OvaqReborn Project
+//                  Rom - Head Developer of Pikachu Obfuscation Tool Project, Developer of OvaqReborn Project
+//                  Hypinohaizin - Head Developer of OvaqReborn Project, Developer of Pikachu Obfuscation Tool Project
 //                  Naa_Naa - Developer of OvaqReborn Project
 //
 //                  外部への無断譲渡を禁止します。
