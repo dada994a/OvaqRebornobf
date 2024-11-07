@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'devs.pikachu.protect'
+version = '2.0-Rewrite'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class' : 'devs.pikachu.protect.Main'
+    }
+}
+
+dependencies {
+    // Apache
+    implementation 'org.apache.logging.log4j:log4j-to-slf4j:2.8.2'
+    implementation 'commons-cli:commons-cli:1.7.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.17.1'
+    implementation 'org.apache.commons:commons-collections4:4.1'
+
+    // Object Web
+    implementation 'org.ow2.asm:asm-commons:9.3'
+    implementation 'org.ow2.asm:asm:9.4'
+    implementation 'org.ow2.asm:asm-tree:9.4'
+    implementation 'org.ow2.asm:asm-analysis:9.4'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
+    // Simple Yaml
+    implementation 'me.carleslc.Simple-YAML:Simple-Yaml:1.8.4'
+
+    // Test dependencies
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+shadowJar {
+    mergeServiceFiles()
+    manifest {
+        attributes 'Main-Class': 'devs.pikachu.protect.Main'
+    }
+}
