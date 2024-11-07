@@ -8,8 +8,8 @@
 - Class To Folder: WinRar, zipなどで開かれる場合にclassをフォルダに変換して閲覧を不可能にします。
 
 ### Pikachu貢献者
-- [Rom](https://github.com/Romdotpng) -  Pikachu Obfuscation Tool Projectのメイン開発者
-- [Hypinohaizin](https://github.com/dada994a) - OvaqReborn Projectのメイン開発者
+- [Rom](https://github.com/Romdotpng) -  OvaqReborn Projectの開発者、Pikachu Obfuscation Tool Projectのメイン開発者
+- [Hypinohaizin](https://github.com/dada994a) - OvaqReborn Projectのメイン開発者、Pikachu Obfuscation Tool Projectの開発者
 - [NaaNaa](https://github.com/naanaa146) - OvaqReborn Projectの開発者
 
 ### OvaqReborn Designers
