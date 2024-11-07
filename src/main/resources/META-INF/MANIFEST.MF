@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Main-Class: devs.pikachu.protect.Main
+Class-Path: asm-9.4.jar opentest4j-1.3.0.jar commons-collections4-4.1.ja
+ r junit-jupiter-engine-5.10.0.jar asm-commons-9.3.jar slf4j-api-1.7.24.
+ jar Simple-Configuration-1.8.4.jar asm-analysis-9.4.jar junit-jupiter-p
+ arams-5.10.0.jar log4j-api-2.17.1.jar junit-platform-engine-1.10.0.jar 
+ commons-cli-1.7.0.jar junit-platform-commons-1.10.0.jar snakeyaml-2.0.j
+ ar junit-jupiter-5.10.0.jar junit-jupiter-api-5.10.0.jar Simple-Yaml-1.
+ 8.4.jar log4j-to-slf4j-2.8.2.jar asm-tree-9.4.jar
+
