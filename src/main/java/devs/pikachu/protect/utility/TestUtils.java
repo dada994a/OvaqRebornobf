@@ -8,6 +8,7 @@ public class TestUtils {
         return y & 1;
     }
 
+    //table switch
     public static long vmLong() {
         int a = 0;
         int b = 3;

@@ -1,0 +1,7 @@
+InputName: "input.jar"
+OutputName: "output.jar"
+
+
+
+ClassToFolder:
+  Enabled: true
