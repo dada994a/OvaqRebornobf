@@ -1,5 +1,7 @@
 # Pikachu - 2P2FJP開発グループによって作成された、特別なJavaプログラム難読化ツール (DIED)
 
+## [README for English](https://github.com/dada994a/OvaqRebornobf/blob/main/README-EN.md)
+
 ### 🐈: **現在の機能**
 - String Obfuscation: 文字列を難読化し、解析を困難にします。
 - Number Obfuscation: 数値を難読化し、リバースエンジニアリングを防ぎます。
