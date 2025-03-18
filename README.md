@@ -1,5 +1,4 @@
-# Pikachu - 2P2FJP開発グループによって作成された、特別なJavaプログラム難読化ツール (DIED)
-
+# Pikachu - 2P2FJP開発グループによって作成された、特別なJavaプログラム難読化ツール 
 ## [README for English](https://github.com/dada994a/OvaqRebornobf/blob/main/README-EN.md)
 
 ### 🐈: **現在の機能**
