@@ -1,4 +1,4 @@
-# Pikachu - A Special Java Program Obfuscation Tool Created by the 2P2FJP Development Group  (DIED)
+# Pikachu - A Special Java Program Obfuscation Tool Created by the 2P2FJP Development Group 
 
 ### 🐈: **Current Features**  
 - **String Obfuscation:** Obfuscates strings to make analysis more difficult.  
