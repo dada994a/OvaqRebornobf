@@ -1,6 +1,15 @@
 package devs.pikachu.protect;
 
-import devs.pikachu.protect.transformer.impl.*;
+
+import devs.pikachu.protect.transformer.impl.junk.More2JunkCodeTransformer;
+import devs.pikachu.protect.transformer.impl.junk.SuperJunkCodeTransformer;
+import devs.pikachu.protect.transformer.impl.misc.SyntheticBridgeApplyerTransformer;
+import devs.pikachu.protect.transformer.impl.number.StringNumberTransformer;
+import devs.pikachu.protect.transformer.impl.ref.InvokeDynamicTransformer;
+import devs.pikachu.protect.transformer.impl.ref.InvokeDynamicTransformer2;
+import devs.pikachu.protect.transformer.impl.renamer.LocalVarTransformer;
+import devs.pikachu.protect.transformer.impl.renamer.PikachuStrReplacerObfVisitor;
+import devs.pikachu.protect.transformer.impl.string.ReverseTransformer;
 import devs.pikachu.protect.utility.*;
 import exceptions.BadError;
 import exceptions.BadException;
@@ -423,7 +432,7 @@ public class Main {
                 cr.accept(new LocalVarTransformer(cr, cw, int1), 0);
                 cr = new ClassReader(cw.toByteArray());
                 cw = new ClassWriter1(cr, 3);
-                cr.accept(new StringObfTransformer(cr, cw, int1), 0);
+                cr.accept(new PikachuStrReplacerObfVisitor(cr, cw, int1), 0);
                 cr = new ClassReader(cw.toByteArray());
                 cw = new ClassWriter1(cr, 3);
                 cr.accept(new StringNumberTransformer(cr, cw, int1, true), 0);
@@ -547,7 +556,7 @@ public class Main {
                             oldcw = cw;
                             cr = new ClassReader(cw.toByteArray());
                             cw = new ClassWriter1(cr, 3);
-                            cr.accept(new StringObfTransformer(cr, cw, int1), 0);
+                            cr.accept(new PikachuStrReplacerObfVisitor(cr, cw, int1), 0);
                             Main.verify(new MyCL(), cw.toByteArray());
                         }
                         catch (Exclude | NotInclude e) {

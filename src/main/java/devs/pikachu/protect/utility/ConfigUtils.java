@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class ConfigUtils {
-    @Getter
     private static final YamlConfiguration config = new YamlConfiguration();
 
     @SneakyThrows
@@ -26,7 +25,7 @@ public class ConfigUtils {
         try {
             InputStream cfg = ConfigUtils.class.getResourceAsStream("../../config.yml");
             FileOutputStream outputStream = new FileOutputStream("config.yml");
-            outputStream.write(cfg.readAllBytes());
+            outputStream.write(cfg.read());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
